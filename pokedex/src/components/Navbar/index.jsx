@@ -4,7 +4,7 @@ import * as React from 'react';
 export default function Navbar() {
   return (
     <nav className={styles.navContent}>
-        <  h1> Pokedex </h1>
+        <img src="assets/pokedex.png" alt="" srcset="" />
         <ul>
             <li> <a href="/">Home</a> </li> 
             <li> <a href="/about">About</a> </li>
