@@ -1,12 +1,12 @@
 import * as React from 'react';
 import styles from './styles.module.scss';
 
-export default function PokemonCard() {
+export default function PokemonCard({name}) {
   return (
   <div className={styles.cardContent}>
     <div className={styles.card}>
         <div className='topCard'>
-            <h2 className='title'>escreva</h2>
+            <h2 className='title'>{name}</h2>
             <span className='secondtext'>escreva aqui</span>
         </div>
         <div className={styles.mediaCard}>
