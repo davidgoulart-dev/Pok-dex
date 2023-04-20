@@ -1,32 +1,26 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import styles from './styles.module.scss';
 
 export default function PokemonCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-  );
+  <div className={styles.cardContent}>
+    <div className={styles.card}>
+        <div className='topCard'>
+            <h2 className='title'>escreva</h2>
+            <span className='secondtext'>escreva aqui</span>
+        </div>
+        <div className={styles.mediaCard}>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokemon" className='img'/>
+        </div>
+        <div className='bottomCard'>
+            <span className='text'>escreva aqui informando sobre seu pokemon, ou pega de uma api</span>
+            <div className='actionsCard'>
+                <button className='btn'>Ver mais</button>
+            </div>
+    </div>
+  </div>
+    </div>
+    );      
 }
+
+
