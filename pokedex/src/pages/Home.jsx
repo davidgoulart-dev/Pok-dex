@@ -20,13 +20,25 @@ export const Home = () => {
    var response = axios.all (endpoints.map(endpoint => axios.get(endpoint))).then(( res ) => setPokemons(res) );
 
    };
-   
+   const pokemonFilter = (name) => {
+    var filteredPokemons = []
+    if (name === '') {
+        getPokemons();
+    }
+    for (var i in pokemons) {
+        if (pokemons[i].data.name.includes(name)) {
+            filteredPokemons.push(pokemons[i]);
+                    }
+    }   
+        console.log( filteredPokemons)
+        setPokemons(filteredPokemons);
+   }
     return (
         <>
-        <Navbar/>
+        <Navbar pokemonFilter={pokemonFilter}/>
                
         <section className={styles.card} >
-            {pokemons.map((pokemon, key) => <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} key={key} /> )}
+            {pokemons.map((pokemon, key) => <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} types={pokemon.data.types} key={key} /> )}
        
        
         </section >         
